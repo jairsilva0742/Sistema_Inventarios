@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    ¡Hola Flask!
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Serie</th>
+                <th>cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for repuestos in repuestos %}
+                
+            
+            <tr>
+                <td>{{repuestos[0]}}</td>
+                <td>{{repuestos[1]}}</td>
+                <td>{{repuestos[2]}}</td>
+                <td>{{repuestos[3]}}</td>
+                <td>{{repuestos[4]}}</td>
+                <td><a href="/edit/{{repuestos[0]}}"> Editar</a>
+                     | 
+                    <a href="/destroy/{{repuestos[0]}}">Eliminar</a></td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

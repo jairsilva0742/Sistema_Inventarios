@@ -1,0 +1,28 @@
+Formulario para editar!!
+{% for repuesto in repuestos %}
+<form method="post" action="/update" enctype="multipart/form-data">
+    Nombre:
+    <input type="text" value="{{repuesto[0]}}" name="txtNombre" id="txtNombre">
+    <br>
+
+    Marca:
+    <input type="text" value="{{repuesto[1]}}" name="txtMarca" id="txtMarca">
+    <br>
+
+    Modelo:
+    <input type="text" value="{{repuesto[2]}}"name="txtModelo" id="txtModelo">
+    <br>
+
+    Serie:
+    <input type="text" value="{{repuesto[3]}}"name="txtSerie" id="txtSerie">
+    <br>
+
+    Cantidad:
+    <input type="text" value="{{repuesto[4]}}"name="txtCantidad" id="txtCantidad">
+    <br>
+    <br>
+    <input type="submit" value="Agregar">
+</form>
+
+   
+{% endfor %}

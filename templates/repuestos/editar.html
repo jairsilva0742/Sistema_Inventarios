@@ -1,28 +1,64 @@
-Formulario para editar!!
+{% include 'header.html' %}
+
 {% for repuesto in repuestos %}
 <form method="post" action="/update" enctype="multipart/form-data">
-    Nombre:
-    <input type="text" value="{{repuesto[0]}}" name="txtNombre" id="txtNombre">
-    <br>
+ 
+    <div class="card">
+        <div class="card-header">
+            Editar registros
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nueva información del Repuesto</h5>
+            <p class="card-text">
 
-    Marca:
-    <input type="text" value="{{repuesto[1]}}" name="txtMarca" id="txtMarca">
-    <br>
+                <div class="form-group">
+                    <label for="txtNombre">Nombre:</label>
+                    <input id="txtNombre" value="{{repuesto[1]}}" class="form-control" type="text" name="txtNombre">
+                </div>
 
-    Modelo:
-    <input type="text" value="{{repuesto[2]}}"name="txtModelo" id="txtModelo">
-    <br>
+                <input type="hidden" value="{{repuesto[0]}}" name="txtID" id="txtID">
+                <br>
 
-    Serie:
-    <input type="text" value="{{repuesto[3]}}"name="txtSerie" id="txtSerie">
-    <br>
+                <div class="form-group">
+                    <label for="txtMarca">Marca:</label>
+                    <input id="txtMarca" value="{{repuesto[2]}}" class="form-control" type="text" name="txtMarca">
+                </div>
 
-    Cantidad:
-    <input type="text" value="{{repuesto[4]}}"name="txtCantidad" id="txtCantidad">
-    <br>
-    <br>
-    <input type="submit" value="Agregar">
+                <div class="form-group">
+                    <label for="txtSerie">serie:</label>
+                    <input id="txtSerie" value="{{repuesto[3]}}" class="form-control" type="text" name="txtSerie">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPrecioUnitario">Precio Unitario:</label>
+                    <input id="txtPrecioUnitario" value="{{repuesto[4]}}"class="form-control" type="text" name="txtPrecioUnitario">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCantidad">Cantidad:</label>
+                    <input id="txtCantidad" value="{{repuesto[5]}}" class="form-control" type="text" name="txtCantidad">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCodigoProducto">Código del Producto:</label>
+                    <input id="txtCodigoProducto" value="{{repuesto[7]}}" class="form-control" type="text" name="txtCodigoProducto">
+                </div>
+
+                <div class="form-group">
+                  
+                    <input type="submit" class="btn btn-success" value="Agregar">
+                    <a href="{{url_for('index')}}" class="btn btn-primary">Volver</a>
+                  </div>
+ 
+
+
+            </p>
+        </div>
+    </div>
+    
+    
 </form>
 
    
 {% endfor %}
+{% include 'footer.html' %}
